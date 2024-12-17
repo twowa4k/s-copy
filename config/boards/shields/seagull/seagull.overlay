@@ -3,7 +3,7 @@
 / {
 	chosen {
     zephyr,display = &oled;
-		zmk,kscan = &default_kscan;
+		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &default_transform;
 	};
 
@@ -20,15 +20,13 @@
 		>;
  };
 
- default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "default_kscan";
-        diode-direction = "col2row";
-        wakeup-source; 
+ kscan0: kscan {
+        compatible = "zmk,kscan-gpio-direct";
+        label = "KSCAN";
+        
 
-        row-gpios = <&pro_micro 18 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>;
-
-        col-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
+       input-gpios = <&pro_micro 18 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>;
+                    <&pro_micro 10 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 11 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 12 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 13 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,

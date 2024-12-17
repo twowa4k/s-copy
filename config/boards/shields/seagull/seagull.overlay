@@ -9,7 +9,7 @@
 
   default_transform: keymap_transform_0 {
 		compatible = "zmk,matrix-transform";
-		columns = <5>;
+		columns = <4>;
 		rows = <2>;
 
         map = <
@@ -32,7 +32,7 @@
         col-gpios = <&pro_micro 10 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 16 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
                     <&pro_micro 14 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
-                    <&pro_micro 15 (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>,
+                
                     <&pro_micro 7  (GPIO_ACTIVE_HIGH| GPIO_PULL_DOWN)>;
  };
 
